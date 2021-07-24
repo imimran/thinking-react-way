@@ -36,11 +36,13 @@ class Clock extends React.PureComponent {
         return (
             <div>
                 <h1 className="heading">
-                    <span className="text">{date.toLocaleDateString(locale)}</span>
+                    <span className="text">{date.toLocaleTimeString(locale)}</span>
                 </h1>
-                <Button change={this.handleClick} locale="en-BD">
-                    Click Here
-                </Button>
+                {locale === 'bn-BD' ? (
+                    <Button change={this.handleClick} locale="en-US" show={false} />
+                ) : (
+                    <Button change={this.handleClick} locale="bn-BD" show />
+                )}
             </div>
         );
     }

@@ -3,11 +3,14 @@ import React from 'react';
 class Button extends React.PureComponent {
     render() {
         console.log('Button Component');
-        const { change, locale } = this.props;
+        const { change, locale, show } = this.props;
         return (
-            <button type="button" onClick={() => change(locale)}>
-                Click Here
-            </button>
+            <diV>
+                <button type="button" onClick={() => change(locale)}>
+                    {locale === 'bn-BD' ? 'Change Clock' : 'ঘড়ি পরিবর্তন করুন'}
+                </button>
+                {show && <p>Hello</p>}
+            </diV>
         );
     }
 }
